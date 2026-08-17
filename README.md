@@ -80,14 +80,24 @@ CTAブロックは「ファーストビュー直後 / 施術説明の後 / ビ�
 
 ## CTAのリンク先を設定する
 
-`js/script.js` の先頭にある `CTA_URL` に、申込みフォームまたは LINE 公式アカウントの
-URLを入れてください。ページ内すべてのCTA（`class="js-cta"`）にまとめて反映されます。
+ボタン画像に書かれている行き先が2種類あるため、`js/script.js` の先頭で
+LINE公式アカウントとホットペッパービューティーのURLを別々に管理します。
 
 ```js
-var CTA_URL = 'https://lin.ee/xxxxxxx';
+var LINE_URL = 'https://lin.ee/qhpQ3eV';
+var HOTPEPPER_URL = ''; // 例: 'https://beauty.hotpepper.jp/kr/slnH000xxxxxx/'
 ```
 
-未設定（空文字）の場合、CTAはクリックしても遷移しません（誤クリック防止）。
+各 `<a>` のクラスで振り分けています。
+
+| クラス | 対象ボタン | 箇所 |
+|---|---|---|
+| `js-cta--line` | ヘッダーバー（LINEで予約する）／FV直下の緑バナー／各CTAブロックの緑ボタン | 7 |
+| `js-cta--hotpepper` | 各CTAブロックのピンクボタン（ホットペッパーで予約する） | 5 |
+
+`HOTPEPPER_URL` が空の場合、ピンクのボタンは `LINE_URL` にフォールバックします
+（リンク切れのボタンを表示しないため）。両方が空の場合は、CTAはクリックしても
+遷移しません（誤クリック防止）。
 
 ## セクション構成
 

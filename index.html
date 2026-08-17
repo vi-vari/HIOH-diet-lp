@@ -24,14 +24,15 @@
   ============
   Figma（LP / Main：node 676:2）の各レイヤーを 768px 幅の画像として
   images/ に配置する構成です。ファイル名・サイズの対応表は README.md を参照。
-  CTAバナーのリンク先は js/script.js の CTA_URL で一括設定します。
+  CTAバナーのリンク先は js/script.js の LINE_URL / HOTPEPPER_URL で設定します。
+  各<a>のクラスが行き先を表します（js-cta--line / js-cta--hotpepper）。
 -->
 
 <div class="lp">
 
   <!-- ============ ヘッダーCTAバー ============ -->
   <header>
-    <a class="lp__link js-cta" href="#">
+    <a class="lp__link js-cta js-cta--line" href="#">
       <img class="lp__img" src="images/01-header-cta.png" width="768" height="114"
            alt="HIOH personal GYM 初回体験のご案内">
     </a>
@@ -45,7 +46,7 @@
            alt="何をしても痩せなかったあなたへ。体質から変えるパーソナルダイエット｜HIOH personal GYM">
       <img class="lp__img" src="images/03-fv-under.png" width="768" height="847" loading="lazy"
            alt="初回体験2,980円（税込）・毎月6名様限定のご案内">
-      <a class="lp__link js-cta" href="#">
+      <a class="lp__link js-cta js-cta--line" href="#">
         <img class="lp__img" src="images/04-cta-banner.png" width="768" height="268" loading="lazy"
              alt="今すぐ無料カウンセリングを申し込む">
       </a>
@@ -63,11 +64,11 @@
     <section aria-label="お申し込み">
       <img class="lp__img" src="images/cta-main.png" width="768" height="1299" loading="lazy"
            alt="初回体験2,980円（税込）／毎月6名様限定のダイエット体験">
-      <a class="lp__link js-cta" href="#">
+      <a class="lp__link js-cta js-cta--hotpepper" href="#">
         <img class="lp__img" src="images/cta-btn-01.png" width="768" height="274" loading="lazy"
              alt="今すぐ申し込む">
       </a>
-      <a class="lp__link js-cta" href="#">
+      <a class="lp__link js-cta js-cta--line" href="#">
         <img class="lp__img" src="images/cta-btn-02.png" width="768" height="274" loading="lazy"
              alt="まずは相談する">
       </a>
@@ -99,11 +100,11 @@
     <section aria-label="お申し込み">
       <img class="lp__img" src="images/cta-main.png" width="768" height="1299" loading="lazy"
            alt="初回体験2,980円（税込）／毎月6名様限定のダイエット体験">
-      <a class="lp__link js-cta" href="#">
+      <a class="lp__link js-cta js-cta--hotpepper" href="#">
         <img class="lp__img" src="images/cta-btn-01.png" width="768" height="274" loading="lazy"
              alt="今すぐ申し込む">
       </a>
-      <a class="lp__link js-cta" href="#">
+      <a class="lp__link js-cta js-cta--line" href="#">
         <img class="lp__img" src="images/cta-btn-02.png" width="768" height="274" loading="lazy"
              alt="まずは相談する">
       </a>
@@ -125,11 +126,11 @@
     <section aria-label="お申し込み">
       <img class="lp__img" src="images/cta-main.png" width="768" height="1299" loading="lazy"
            alt="初回体験2,980円（税込）／毎月6名様限定のダイエット体験">
-      <a class="lp__link js-cta" href="#">
+      <a class="lp__link js-cta js-cta--hotpepper" href="#">
         <img class="lp__img" src="images/cta-btn-01.png" width="768" height="274" loading="lazy"
              alt="今すぐ申し込む">
       </a>
-      <a class="lp__link js-cta" href="#">
+      <a class="lp__link js-cta js-cta--line" href="#">
         <img class="lp__img" src="images/cta-btn-02.png" width="768" height="274" loading="lazy"
              alt="まずは相談する">
       </a>
@@ -173,11 +174,11 @@
     <section aria-label="お申し込み">
       <img class="lp__img" src="images/cta-main.png" width="768" height="1299" loading="lazy"
            alt="初回体験2,980円（税込）／毎月6名様限定のダイエット体験">
-      <a class="lp__link js-cta" href="#">
+      <a class="lp__link js-cta js-cta--hotpepper" href="#">
         <img class="lp__img" src="images/cta-btn-01.png" width="768" height="274" loading="lazy"
              alt="今すぐ申し込む">
       </a>
-      <a class="lp__link js-cta" href="#">
+      <a class="lp__link js-cta js-cta--line" href="#">
         <img class="lp__img" src="images/cta-btn-02.png" width="768" height="274" loading="lazy"
              alt="まずは相談する">
       </a>
@@ -309,11 +310,11 @@
     <section aria-label="お申し込み">
       <img class="lp__img" src="images/cta-main.png" width="768" height="1299" loading="lazy"
            alt="初回体験2,980円（税込）／毎月6名様限定のダイエット体験">
-      <a class="lp__link js-cta" href="#">
+      <a class="lp__link js-cta js-cta--hotpepper" href="#">
         <img class="lp__img" src="images/cta-btn-01.png" width="768" height="274" loading="lazy"
              alt="今すぐ申し込む">
       </a>
-      <a class="lp__link js-cta" href="#">
+      <a class="lp__link js-cta js-cta--line" href="#">
         <img class="lp__img" src="images/cta-btn-02.png" width="768" height="274" loading="lazy"
              alt="まずは相談する">
       </a>

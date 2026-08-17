@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+/* =========================================================
+   HIOH personal GYM ダイエットLP
+   Figma: LP / Main (node 676:2) を実装
+   デザイン基準幅：768px（1カラム）。768px以上では中央寄せ、
+   768px未満ではカラム全体が比率を保ったまま縮小する。
+   ========================================================= */
+
+:root {
+  /* デザイントークン（Figma の実測値） */
+  --lp-width: 768px;          /* デザイン基準のカラム幅 */
+  --c-bg: #ffffff;            /* Background レイヤー */
+  --c-text: #000000;
+  --c-accent: #e34b4c;        /* 強調テキスト（赤） */
+  --c-note-bg: #fcf3f4;       /* 代表あいさつブロックの背景 */
+  --c-footer-bg: #fce0e0;     /* フッター背景 */
+  --c-footer-text: #333333;
+
+  --font-jp: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+             "Yu Gothic", "Meiryo", system-ui, sans-serif;
+
+  /* 本文サイズ：デザイン幅768pxで指定値になり、狭い画面では下限で止まる */
+  --fs-note: clamp(15px, 3.125vw, 24px);   /* 24px @768 */
+  --fs-lead: clamp(17px, 4.6875vw, 36px);  /* 36px @768 */
+}
+
+/* ---------- reset ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--c-bg);
+  color: var(--c-text);
+  font-family: var(--font-jp);
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-break: strict;
+}
+
+img { border-style: none; }
+
+a { color: inherit; }
+
+/* ---------- レイアウト ---------- */
+
+/* デザインの「Background（白地）＋中央768pxのコンテンツ」を再現 */
+.lp {
+  width: 100%;
+  max-width: var(--lp-width);
+  margin-inline: auto;
+  background: var(--c-bg);
+}
+
+/*
+  画像セクション：Figma上は 768px 幅の画像を隙間なく縦に積んだ構成。
+  width/height 属性で各画像固有の縦横比を保持し、読み込み前もレイアウトが崩れない。
+*/
+.lp__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  /* 画像未配置でも高さが確保されるようプレースホルダー色を敷く */
+  background: #f4f4f4;
+}
+
+/* 画像リンク（CTAバナー等）。行間由来の余白が出ないよう block 化 */
+.lp__link {
+  display: block;
+  text-decoration: none;
+}
+
+.lp__link:focus-visible {
+  outline: 3px solid var(--c-accent);
+  outline-offset: -3px;
+}
+
+@media (hover: hover) {
+  .lp__link:hover .lp__img { opacity: .85; transition: opacity .2s ease; }
+}
+
+/* ---------- テキストブロック ---------- */
+
+/* 代表あいさつ（薄ピンク地・24px） */
+.lp-note {
+  background: var(--c-note-bg);
+  padding: clamp(20px, 3.6vw, 28px) clamp(16px, 4.8vw, 37px)
+           clamp(24px, 4.8vw, 37px);
+}
+
+.lp-note p {
+  margin: 0 0 1.6em;
+  font-size: var(--fs-note);
+  line-height: 1.85;
+}
+
+.lp-note p:last-child { margin-bottom: 0; }
+
+.lp-note__sign {
+  text-align: right;
+}
+
+/* 締めのメッセージ（白地・36px） */
+.lp-lead {
+  background: var(--c-bg);
+  padding: clamp(24px, 9vw, 69px) clamp(16px, 4.4vw, 34px)
+           clamp(24px, 6vw, 46px);
+}
+
+.lp-lead p {
+  margin: 0 0 1.5em;
+  font-size: var(--fs-lead);
+  line-height: 1.7;
+}
+
+.lp-lead p:last-child { margin-bottom: 0; }
+
+.lp-lead strong {
+  color: var(--c-accent);
+  font-weight: 600;
+}
+
+.lp-lead .is-accent { color: var(--c-accent); }
+
+/* ---------- フッター ---------- */
+.lp-footer {
+  background: var(--c-footer-bg);
+  color: var(--c-footer-text);
+  padding: 16px 12px;
+  text-align: center;
+}
+
+.lp-footer p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ---------- モーション配慮 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

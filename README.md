@@ -85,7 +85,7 @@ LINE公式アカウントとホットペッパービューティーのURLを別�
 
 ```js
 var LINE_URL = 'https://lin.ee/qhpQ3eV';
-var HOTPEPPER_URL = ''; // 例: 'https://beauty.hotpepper.jp/kr/slnH000xxxxxx/'
+var HOTPEPPER_URL = 'https://beauty.hotpepper.jp/CSP/kr/reserve/?storeId=H000716590&couponId=CP00000010708107&add=0';
 ```
 
 各 `<a>` のクラスで振り分けています。
